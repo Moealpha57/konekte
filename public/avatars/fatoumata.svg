@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+  <title id="title">Fatoumata Camara portrait</title>
+  <desc id="desc">Stylized portrait of a Black Guinean woman science tutor.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fce7f3"/><stop offset="1" stop-color="#ccfbf1"/></linearGradient></defs>
+  <rect width="700" height="700" fill="url(#bg)"/>
+  <circle cx="350" cy="347" r="250" fill="#0f766e" opacity=".1"/>
+  <path d="M168 650c26-130 101-199 182-199s156 69 182 199H168Z" fill="#7c2d12"/>
+  <path d="M235 481c54 49 177 49 230 0l30 169H205l30-169Z" fill="#9a3412"/>
+  <ellipse cx="248" cy="323" rx="29" ry="39" fill="#4f2618"/>
+  <ellipse cx="452" cy="323" rx="29" ry="39" fill="#4f2618"/>
+  <path d="M247 271c0-88 45-146 103-146s103 58 103 146v91c0 80-46 136-103 136s-103-56-103-136v-91Z" fill="#60321f"/>
+  <path d="M201 315c-19-127 48-224 149-224s168 97 149 224c-35-74-78-110-149-110s-114 36-149 110Z" fill="#11100d"/>
+  <path d="M221 253c23-94 72-145 134-145 59 0 104 46 127 133-69-36-138-39-261 12Z" fill="#17110d"/>
+  <path d="M218 254c36 15 84 20 139 9 47-9 83-25 118-14-16-46-61-96-124-96-65 0-113 43-133 101Z" fill="#221711"/>
+  <path d="M287 287c19-14 40-14 59 0M357 287c19-14 40-14 59 0" stroke="#1d120c" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="316" cy="327" r="9" fill="#120b07"/><circle cx="386" cy="327" r="9" fill="#120b07"/>
+  <path d="M351 330c-10 35-16 55-5 64 8 6 22 4 31-3" fill="none" stroke="#3b1d14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M309 419c27 24 58 24 86 0" fill="none" stroke="#f3b39d" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="250" cy="387" r="10" fill="#14b8a6"/><circle cx="450" cy="387" r="10" fill="#14b8a6"/>
+</svg>

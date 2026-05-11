@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+  <title id="title">Aïssatou Diallo portrait</title>
+  <desc id="desc">Stylized portrait of a Black Guinean woman tutor.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d1fae5"/><stop offset="1" stop-color="#fef3c7"/></linearGradient>
+  </defs>
+  <rect width="700" height="700" fill="url(#bg)"/>
+  <circle cx="350" cy="345" r="245" fill="#064e3b" opacity=".08"/>
+  <path d="M180 650c22-126 96-194 170-194s148 68 170 194H180Z" fill="#0f766e"/>
+  <path d="M245 486c50 42 162 42 210 0l28 164H217l28-164Z" fill="#115e59"/>
+  <circle cx="350" cy="286" r="142" fill="#4b2417"/>
+  <path d="M214 300c-16-116 44-207 136-207s151 92 136 207c-32-64-72-92-136-92s-105 28-136 92Z" fill="#17110d"/>
+  <path d="M222 258c14-91 61-150 128-150 68 0 115 59 129 150-44-38-81-55-129-55-47 0-85 17-128 55Z" fill="#0f0a07"/>
+  <ellipse cx="253" cy="318" rx="28" ry="38" fill="#4b2417"/>
+  <ellipse cx="447" cy="318" rx="28" ry="38" fill="#4b2417"/>
+  <path d="M250 278c0-81 45-137 100-137s100 56 100 137v87c0 75-45 128-100 128s-100-53-100-128v-87Z" fill="#5a2d1e"/>
+  <path d="M287 282c18-15 39-15 57 0M356 282c18-15 39-15 57 0" stroke="#1b120d" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="315" cy="322" r="9" fill="#120c08"/><circle cx="385" cy="322" r="9" fill="#120c08"/>
+  <path d="M350 327c-11 35-17 55-6 64 8 6 23 3 31-4" fill="none" stroke="#3b1d14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M309 415c27 25 57 25 85 0" fill="none" stroke="#f8c6b0" stroke-width="11" stroke-linecap="round"/>
+  <path d="M239 252c33-77 72-110 132-110 70 0 116 48 137 125-48-43-90-64-157-64-45 0-79 13-112 49Z" fill="#1b130f"/>
+  <circle cx="251" cy="385" r="10" fill="#f59e0b"/><circle cx="449" cy="385" r="10" fill="#f59e0b"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+  <title id="title">Mamadou Bah portrait</title>
+  <desc id="desc">Stylized portrait of a Black Guinean male teacher.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ecfccb"/><stop offset="1" stop-color="#bfdbfe"/></linearGradient></defs>
+  <rect width="700" height="700" fill="url(#bg)"/>
+  <circle cx="350" cy="348" r="248" fill="#065f46" opacity=".1"/>
+  <path d="M158 650c25-132 101-203 192-203s167 71 192 203H158Z" fill="#1e3a8a"/>
+  <path d="M236 475h228l37 175H199l37-175Z" fill="#172554"/>
+  <path d="M264 465c40 58 132 58 172 0v185H264V465Z" fill="#f8fafc"/>
+  <ellipse cx="252" cy="323" rx="30" ry="40" fill="#3f1f14"/>
+  <ellipse cx="448" cy="323" rx="30" ry="40" fill="#3f1f14"/>
+  <path d="M247 276c0-88 45-148 103-148s103 60 103 148v86c0 80-46 136-103 136s-103-56-103-136v-86Z" fill="#4a2518"/>
+  <path d="M228 284c-6-111 48-190 122-190 76 0 130 79 122 190-41-55-71-80-122-80-50 0-82 25-122 80Z" fill="#16100c"/>
+  <path d="M242 239c31-85 67-126 125-126 53 0 91 34 110 107-48-28-96-34-139-23-41 11-67 24-96 42Z" fill="#0f0a07"/>
+  <path d="M290 286c19-13 39-13 58 0M358 286c19-13 39-13 58 0" stroke="#160f0a" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="318" cy="326" r="9" fill="#090604"/><circle cx="387" cy="326" r="9" fill="#090604"/>
+  <path d="M351 332c-10 34-15 54-3 63 8 6 21 4 30-2" fill="none" stroke="#2d160f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M306 418c29 21 61 21 90 0" fill="none" stroke="#e9a88e" stroke-width="11" stroke-linecap="round"/>
+  <path d="M285 452c45 23 88 23 130 0" stroke="#1b100a" stroke-width="14" stroke-linecap="round"/>
+</svg>
