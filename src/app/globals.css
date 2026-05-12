@@ -45,7 +45,9 @@
 html { scroll-behavior: smooth; background: var(--background); }
 body {
   color: var(--foreground);
-  background: radial-gradient(circle at top left, var(--accent-soft) 0, transparent 34rem), var(--background);
+  background:
+    radial-gradient(circle at top left, var(--accent-soft) 0, transparent 34rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--background) 94%, white) 0%, var(--background) 100%);
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
@@ -53,12 +55,37 @@ a { color: inherit; text-decoration: none; }
 
 @layer components {
   .shell { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
-  .card { @apply rounded-3xl border shadow-sm backdrop-blur; background: var(--surface); border-color: var(--line); box-shadow: 0 1px 2px rgb(0 0 0 / 0.06); }
+  .card { @apply rounded-[1.35rem] border shadow-sm backdrop-blur; background: var(--surface); border-color: var(--line); box-shadow: 0 12px 38px rgb(24 18 10 / 0.06); }
   .pill { @apply inline-flex items-center rounded-full border px-3 py-1 text-sm; background: var(--surface-strong); border-color: var(--line); color: var(--muted); }
-  .btn-primary { @apply inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-white transition focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:ring-offset-2; background: #064e3b; }
-  .btn-primary:hover { background: #065f46; }
+  .btn-primary { @apply inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-white transition focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:ring-offset-2; background: linear-gradient(135deg, #0f5d43, #08734e); box-shadow: 0 12px 24px rgb(8 115 78 / 0.22); }
+  .btn-primary:hover { filter: brightness(1.04); }
   .btn-secondary { @apply inline-flex min-h-11 items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2; background: var(--surface-strong); border-color: var(--line); color: var(--foreground); }
   .btn-secondary:hover { border-color: var(--muted); }
+  .icon-button { @apply inline-flex h-10 w-10 items-center justify-center rounded-full border transition hover:-translate-y-0.5; background: var(--surface-strong); border-color: var(--line); color: var(--foreground); }
+  .brand-logo { @apply inline-flex items-center gap-2 text-2xl font-bold tracking-tight text-emerald-800; }
+  .brand-logo-mark { @apply relative inline-flex h-7 w-6 items-end justify-center; }
+  .brand-logo-mark::before,
+  .brand-logo-mark::after,
+  .brand-logo-mark span { content: ""; position: absolute; display: block; background: currentColor; }
+  .brand-logo-mark::before { width: 0.58rem; height: 0.58rem; border-radius: 999px; left: 0.1rem; top: 0.1rem; }
+  .brand-logo-mark::after { width: 0.52rem; height: 0.52rem; border-radius: 999px; right: 0.08rem; top: 0.34rem; }
+  .brand-logo-mark span { width: 1.25rem; height: 0.72rem; border-radius: 999px 999px 0.55rem 0.55rem; bottom: 0.12rem; transform: rotate(-8deg); }
+  .search-pill { @apply flex min-h-14 w-full max-w-md items-center gap-3 rounded-full border p-1 pl-5 text-left text-sm shadow-sm transition hover:-translate-y-0.5; background: var(--surface-strong); border-color: var(--line); color: var(--muted); }
+  .search-pill-button { @apply ml-auto inline-flex h-12 w-12 items-center justify-center rounded-full text-white; background: linear-gradient(135deg, #0f5d43, #08734e); box-shadow: 0 10px 22px rgb(8 115 78 / 0.24); }
+  .location-pill { @apply inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold; background: var(--surface-strong); border-color: var(--line); color: var(--foreground); }
+  .category-grid { @apply grid grid-cols-2 gap-3 sm:grid-cols-5; }
+  .category-tile { @apply flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border p-4 text-center text-sm font-semibold transition hover:-translate-y-0.5 hover:shadow-md; background: linear-gradient(145deg, color-mix(in srgb, var(--surface-strong) 92%, var(--accent-soft)), var(--surface-strong)); border-color: var(--line); color: #074936; }
+  .trust-banner { @apply relative flex min-h-32 overflow-hidden rounded-[1.35rem] border p-5 shadow-sm; background: linear-gradient(135deg, #073f2e, #0e6a4b); border-color: color-mix(in srgb, #0e6a4b 70%, white); color: white; }
+  .trust-banner h2 { @apply text-lg font-semibold tracking-tight; }
+  .trust-banner p { @apply mt-2 max-w-md text-sm leading-6 text-emerald-50/85; }
+  .trust-badge { @apply mr-3 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/12 text-emerald-50; }
+  .trust-faces { @apply absolute bottom-0 right-4 hidden items-end -space-x-5 sm:flex; }
+  .trust-faces img { @apply h-24 w-24 rounded-3xl border-4 border-emerald-950/20 bg-emerald-50 object-cover; }
+  .mobile-tabbar { @apply fixed inset-x-0 bottom-0 z-[80] mx-auto grid max-w-md grid-cols-4 border-t px-3 pb-[max(0.7rem,env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur; background: color-mix(in srgb, var(--surface-strong) 90%, transparent); border-color: var(--line); }
+  .mobile-tabbar-item { @apply flex flex-col items-center justify-center gap-1 text-[0.7rem] font-medium; color: var(--muted); }
+  .mobile-tabbar-icon { @apply inline-flex h-8 w-8 items-center justify-center rounded-full; }
+  .mobile-tabbar-item.is-active { color: #0f5d43; }
+  .mobile-tabbar-item.is-primary .mobile-tabbar-icon { @apply h-11 w-11 text-white; background: linear-gradient(135deg, #0f5d43, #08734e); box-shadow: 0 8px 20px rgb(8 115 78 / 0.28); transform: translateY(-0.55rem); }
   .label { @apply text-sm font-medium; color: var(--muted); }
   .input { @apply min-h-11 w-full rounded-2xl border px-4 py-3 text-base outline-none transition focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20; background: var(--surface-strong); border-color: var(--line); color: var(--foreground); }
   .input::placeholder { color: var(--muted); }
@@ -88,7 +115,14 @@ a { color: inherit; text-decoration: none; }
 .theme-dark .hover\:bg-white:hover { background-color: var(--surface-hover); }
 .theme-dark .bg-emerald-50 { background-color: #16352a; }
 .theme-dark .bg-emerald-100 { background-color: #1d4d3d; }
+.theme-dark .brand-logo,
+.theme-dark .category-tile,
+.theme-dark .mobile-tabbar-item.is-active { color: #6ee7b7; }
 .theme-dark .border-stone-200\/70,
 .theme-dark .border-stone-200,
 .theme-dark .border-stone-300 { border-color: var(--line); }
 .theme-dark .shadow-stone-200\/60 { box-shadow: none; }
+
+@media (max-width: 639px) {
+  body { padding-bottom: 5.5rem; }
+}

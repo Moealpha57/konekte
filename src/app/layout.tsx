@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Suspense } from "react";
 import { ThemeBootScript } from "@/components/AppControls";
+import { MobileTabBar } from "@/components/MobileTabBar";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -20,7 +22,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <ThemeBootScript />
       </head>
-      <body className={geistSans.className}>{children}</body>
+      <body className={geistSans.className}>
+        {children}
+        <Suspense fallback={null}>
+          <MobileTabBar />
+        </Suspense>
+      </body>
     </html>
   );
 }

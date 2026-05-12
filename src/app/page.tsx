@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
+import { Icon } from "@/components/Icon";
 import { TutorCard } from "@/components/TutorCard";
 import { copy, getLocale, withLocale } from "@/lib/i18n";
 import { getTutors } from "@/lib/supabase";
@@ -8,54 +9,66 @@ export default async function Home({ searchParams }: { searchParams: { lang?: st
   const locale = getLocale(searchParams.lang);
   const t = copy[locale];
   const tutors = (await getTutors()).slice(0, 2);
-  const adminWhatsapp = process.env.NEXT_PUBLIC_ADMIN_WHATSAPP ?? "224600000000";
-  const adminMessage = encodeURIComponent(t.adminWhatsappMessage);
+  const categories = [
+    { label: locale === "fr" ? "Tutorat" : "Tutoring", icon: "cap" as const, href: "/tuteurs?subject=Tutoring" },
+    { label: locale === "fr" ? "Photographie" : "Photography", icon: "camera" as const, href: "/tuteurs?subject=Photography" },
+    { label: locale === "fr" ? "Ménage" : "Housekeeping", icon: "clean" as const, href: "/tuteurs?subject=Housekeeping" },
+    { label: "Web Design", icon: "screen" as const, href: "/tuteurs?subject=Web%20design" },
+    { label: locale === "fr" ? "Création de sites" : "Website Creation", icon: "globe" as const, href: "/tuteurs?subject=Website%20creation" },
+  ];
 
   return (
     <>
       <Header locale={locale} />
       <main>
-        <section className="shell py-12 sm:py-20">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div>
-              <p className="mb-4 inline-flex rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-900">{t.heroBadge}</p>
-              <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-6xl">{t.heroTitle}</h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-stone-600">{t.heroBody}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href={withLocale("/tuteurs", locale)} className="btn-primary">{t.viewTutors}</Link>
-                <a href={`https://wa.me/${adminWhatsapp}?text=${adminMessage}`} className="btn-secondary">{t.talkToMariama}</a>
-              </div>
-              <div className="mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
-                {[t.trustPoint1, t.trustPoint2, t.trustPoint3].map((point) => (
-                  <div key={point} className="rounded-2xl border border-stone-200/70 bg-white/55 p-3 text-sm font-medium leading-5 text-stone-700 shadow-sm shadow-stone-200/40">{point}</div>
-                ))}
-              </div>
-            </div>
-
-            <div className="card p-4">
-              <div className="rounded-[1.35rem] bg-stone-950 p-4 text-white">
-                <p className="text-sm text-stone-300">{t.simpleSearch}</p>
-                <div className="mt-4 grid gap-3">
-                  <div className="rounded-2xl bg-white/10 p-4"><span className="text-stone-300">{t.subject}</span><p className="text-xl font-semibold">{locale === "fr" ? "Photographie" : "Photography"}</p></div>
-                  <div className="rounded-2xl bg-white/10 p-4"><span className="text-stone-300">{t.neighborhood}</span><p className="text-xl font-semibold">Conakry · Kipé</p></div>
-                  <div className="rounded-2xl bg-emerald-400 p-4 text-emerald-950"><span className="font-medium">{t.directContact}</span><p className="text-xl font-semibold">{t.whatsappOneClick}</p></div>
-                </div>
-              </div>
-            </div>
+        <section className="shell py-8 sm:py-16">
+          <div className="mx-auto max-w-md text-center sm:max-w-3xl">
+            <p className="mx-auto mb-4 inline-flex items-center gap-2 text-sm font-medium text-stone-700">
+              <Icon name="shield" className="h-4 w-4 text-emerald-700" />
+              {locale === "fr" ? "Vérifié. Local. Fiable." : "Verified. Local. Trusted."}
+            </p>
+            <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-stone-950 sm:text-6xl">{t.heroTitle}</h1>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-stone-600 sm:text-lg">{t.heroBody}</p>
+            <Link href={withLocale("/tuteurs", locale)} className="search-pill mx-auto mt-7">
+              <Icon name="search" className="h-5 w-5" />
+              <span>{t.searchPlaceholder}</span>
+              <span className="search-pill-button"><Icon name="search" className="h-5 w-5" /></span>
+            </Link>
+            <Link href={withLocale("/tuteurs?neighborhood=Conakry", locale)} className="location-pill mx-auto mt-3">
+              <Icon name="map" className="h-4 w-4" />
+              <span>Conakry, Guinea</span>
+            </Link>
           </div>
         </section>
 
-        <section className="shell pb-16">
-          <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
-            <div className="card p-6 sm:p-8">
-              <p className="text-sm font-medium text-emerald-900">Konekte</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-stone-950">{t.trustTitle}</h2>
-              <p className="mt-4 text-base leading-7 text-stone-600">{t.trustBody}</p>
+        <section className="shell pb-10">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-base font-semibold tracking-tight">{t.popularCategories}</h2>
+            <Link href={withLocale("/tuteurs", locale)} className="text-sm font-semibold text-emerald-800">{t.seeAllShort}</Link>
+          </div>
+          <div className="category-grid">
+            {categories.map((category) => (
+              <Link href={withLocale(category.href, locale)} className="category-tile" key={category.label}>
+                <Icon name={category.icon} className="h-7 w-7" />
+                <span>{category.label}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="shell pb-12">
+          <div className="trust-banner">
+            <div className="trust-badge">
+              <Icon name="shield" className="h-5 w-5" />
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              <Step title={t.stepOneTitle} body={t.stepOneBody} />
-              <Step title={t.stepTwoTitle} body={t.stepTwoBody} />
-              <Step title={t.stepThreeTitle} body={t.stepThreeBody} />
+            <div>
+              <h2>{t.everyProviderVerified}</h2>
+              <p>{t.verifiedBlockBody}</p>
+            </div>
+            <div className="trust-faces" aria-hidden="true">
+              <img src="/avatars/mamadou.svg" alt="" />
+              <img src="/avatars/aissatou.svg" alt="" />
+              <img src="/avatars/fatoumata.svg" alt="" />
             </div>
           </div>
         </section>
@@ -113,14 +126,5 @@ export default async function Home({ searchParams }: { searchParams: { lang?: st
         </section>
       </main>
     </>
-  );
-}
-
-function Step({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="card p-5">
-      <p className="text-lg font-semibold tracking-tight text-stone-950">{title}</p>
-      <p className="mt-3 text-sm leading-6 text-stone-600">{body}</p>
-    </div>
   );
 }
