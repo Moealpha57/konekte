@@ -18,7 +18,7 @@ export default async function TutorsPage({ searchParams }: { searchParams: { sub
           <p className="mt-3 max-w-2xl text-stone-600">{t.tutorsIntro}</p>
         </div>
         <FilterBar searchParams={searchParams} locale={locale} />
-        <div className="mt-6 grid gap-4">
+        <div className="relative z-0 mt-6 grid gap-4">
           {tutors.length ? tutors.map((tutor) => <TutorCard key={tutor.id} tutor={tutor} locale={locale} />) : <div className="card p-8 text-center text-stone-600">{t.noTutors}</div>}
         </div>
       </main>

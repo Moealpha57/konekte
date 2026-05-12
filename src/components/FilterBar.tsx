@@ -6,7 +6,7 @@ export function FilterBar({ searchParams, locale = "fr" }: { searchParams: { sub
   const t = copy[locale];
   const serviceOptions = SUBJECTS.map((value) => ({ value, label: SERVICE_LABELS[locale][value as keyof typeof SERVICE_LABELS.en] }));
   return (
-    <form className="card grid gap-3 p-4 sm:grid-cols-4" action="/tuteurs">
+    <form className="card relative z-50 grid gap-3 overflow-visible p-4 sm:grid-cols-4" action="/tuteurs">
       {locale === "en" ? <input type="hidden" name="lang" value="en" /> : null}
       <Select name="subject" label={t.subject} allLabel={t.all} value={searchParams.subject} options={serviceOptions} />
       <Select name="neighborhood" label={t.neighborhood} allLabel={t.all} value={searchParams.neighborhood} options={NEIGHBORHOODS.map((value) => ({ value, label: value }))} />
