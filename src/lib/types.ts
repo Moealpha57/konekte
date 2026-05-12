@@ -55,7 +55,7 @@ export const SERVICE_LABELS = {
   fr: {
     Tutoring: "Tutorat",
     Photography: "Photographie",
-    Housekeeping: "Housekeeping",
+    Housekeeping: "Ménage",
     "Web design": "Web design",
     "Website creation": "Création de sites",
   },

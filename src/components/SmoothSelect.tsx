@@ -68,7 +68,7 @@ export function SmoothSelect({
   }
 
   return (
-    <div className={`smooth-select relative grid gap-2 ${open ? "z-[80]" : "z-0"} ${className}`} ref={rootRef}>
+    <div className={`smooth-select relative grid gap-2 ${open ? "z-[120]" : "z-10"} ${className}`} ref={rootRef}>
       {label ? <label className="label" id={`${id}-label`}>{label}</label> : null}
       <input name={name} value={selectedValue} required={required} readOnly className="sr-only" tabIndex={-1} />
       <button
@@ -86,7 +86,7 @@ export function SmoothSelect({
       <div
         role="listbox"
         aria-labelledby={label ? `${id}-label` : undefined}
-        className={`smooth-select-menu absolute left-0 right-0 top-full z-[999] mt-2 overflow-hidden rounded-2xl border p-1 shadow-xl backdrop-blur transition-all duration-200 ease-out ${open ? "pointer-events-auto translate-y-0 scale-100 opacity-100" : "pointer-events-none -translate-y-1 scale-[0.98] opacity-0"}`}
+        className={`smooth-select-menu absolute left-0 right-0 top-full z-[999] mt-2 max-h-64 overflow-auto rounded-2xl border p-1 shadow-xl backdrop-blur transition-all duration-200 ease-out ${open ? "pointer-events-auto translate-y-0 scale-100 opacity-100" : "pointer-events-none -translate-y-1 scale-[0.98] opacity-0"}`}
         style={{ background: "var(--surface-strong)", borderColor: "var(--line)" }}
       >
         {placeholder ? (

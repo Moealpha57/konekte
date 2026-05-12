@@ -1,5 +1,5 @@
 import { Header } from "@/components/Header";
-import { ParentAccountPreview } from "@/components/ParentAccountPreview";
+import { CustomerRequestForm } from "@/components/CustomerRequestForm";
 import { copy, getLocale } from "@/lib/i18n";
 
 export default function AccountPage({ searchParams }: { searchParams: { lang?: string } }) {
@@ -14,7 +14,7 @@ export default function AccountPage({ searchParams }: { searchParams: { lang?: s
           <h1 className="mt-2 text-4xl font-semibold tracking-tight">{t.accountTitle}</h1>
           <p className="mt-3 text-stone-600">{t.accountIntro}</p>
         </div>
-        <ParentAccountPreview locale={locale} />
+        <CustomerRequestForm locale={locale} />
       </main>
     </>
   );

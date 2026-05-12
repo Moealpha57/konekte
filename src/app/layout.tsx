@@ -11,7 +11,7 @@ const geistSans = localFont({
 
 export const metadata: Metadata = {
   title: "Konekte — Services de confiance à Conakry",
-  description: "Konekte aide les familles à trouver des tuteurs fiables aujourd’hui, puis des services locaux vérifiés demain.",
+  description: "Konekte aide les clients à trouver des prestataires locaux vérifiés à Conakry.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

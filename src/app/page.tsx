@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: { searchParams: { lang?: st
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <p className="mb-4 inline-flex rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-900">{t.heroBadge}</p>
-              <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-stone-950 sm:text-7xl">{t.heroTitle}</h1>
+              <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-6xl">{t.heroTitle}</h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-stone-600">{t.heroBody}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={withLocale("/tuteurs", locale)} className="btn-primary">{t.viewTutors}</Link>

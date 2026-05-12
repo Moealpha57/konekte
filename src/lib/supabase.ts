@@ -28,7 +28,7 @@ export async function getTutors(filters?: { subject?: string; neighborhood?: str
 
   const { data, error } = await query;
   if (error) {
-    console.error("Supabase tutor query failed, using placeholder data", error.message);
+    console.error("Provider query failed, using local profiles", error.message);
     return filterTutors(mockTutors, filters);
   }
   return (data ?? []) as Tutor[];
