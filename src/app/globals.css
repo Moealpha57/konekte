@@ -63,17 +63,23 @@ a { color: inherit; text-decoration: none; }
   .btn-secondary:hover { border-color: var(--muted); }
   .icon-button { @apply inline-flex h-10 w-10 items-center justify-center rounded-full border transition hover:-translate-y-0.5; background: var(--surface-strong); border-color: var(--line); color: var(--foreground); }
   .brand-logo { @apply inline-flex items-center gap-2 text-2xl font-bold tracking-tight text-emerald-800; }
-  .brand-logo-mark { @apply relative inline-flex h-7 w-6 items-end justify-center; }
+  .brand-logo-mark { @apply relative inline-flex h-7 w-7 shrink-0 items-center justify-center; }
   .brand-logo-mark::before,
   .brand-logo-mark::after,
   .brand-logo-mark span { content: ""; position: absolute; display: block; background: currentColor; }
-  .brand-logo-mark::before { width: 0.58rem; height: 0.58rem; border-radius: 999px; left: 0.1rem; top: 0.1rem; }
-  .brand-logo-mark::after { width: 0.52rem; height: 0.52rem; border-radius: 999px; right: 0.08rem; top: 0.34rem; }
-  .brand-logo-mark span { width: 1.25rem; height: 0.72rem; border-radius: 999px 999px 0.55rem 0.55rem; bottom: 0.12rem; transform: rotate(-8deg); }
+  .brand-logo-mark-clean-k::before { width: 0.26rem; height: 1.45rem; border-radius: 999px; left: 0.36rem; top: 0.15rem; }
+  .brand-logo-mark-clean-k::after { width: 0.28rem; height: 0.95rem; border-radius: 999px; left: 0.88rem; top: 0.22rem; transform: rotate(42deg); }
+  .brand-logo-mark-clean-k span { width: 0.28rem; height: 0.95rem; border-radius: 999px; left: 0.88rem; bottom: 0.18rem; transform: rotate(-42deg); }
+  .brand-logo-mark-wordmark::before { width: 1.6rem; height: 1.6rem; border-radius: 999px; opacity: 0.12; }
+  .brand-logo-mark-wordmark::after { width: 0.26rem; height: 1.15rem; border-radius: 999px; left: 0.62rem; top: 0.28rem; }
+  .brand-logo-mark-wordmark span { width: 0.75rem; height: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; border: 0.22rem solid currentColor; border-left: 0; background: transparent; left: 0.78rem; top: 0.42rem; }
+  .brand-logo-mark-connected-k::before { width: 0.58rem; height: 0.58rem; border-radius: 999px; left: 0.1rem; top: 0.1rem; }
+  .brand-logo-mark-connected-k::after { width: 0.52rem; height: 0.52rem; border-radius: 999px; right: 0.08rem; top: 0.34rem; }
+  .brand-logo-mark-connected-k span { width: 1.25rem; height: 0.72rem; border-radius: 999px 999px 0.55rem 0.55rem; bottom: 0.12rem; transform: rotate(-8deg); }
   .search-pill { @apply flex min-h-14 w-full max-w-md items-center gap-3 rounded-full border p-1 pl-5 text-left text-sm shadow-sm transition hover:-translate-y-0.5; background: var(--surface-strong); border-color: var(--line); color: var(--muted); }
   .search-pill-button { @apply ml-auto inline-flex h-12 w-12 items-center justify-center rounded-full text-white; background: linear-gradient(135deg, #0f5d43, #08734e); box-shadow: 0 10px 22px rgb(8 115 78 / 0.24); }
   .location-pill { @apply inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold; background: var(--surface-strong); border-color: var(--line); color: var(--foreground); }
-  .category-grid { @apply grid grid-cols-2 gap-3 sm:grid-cols-5; }
+  .category-grid { @apply grid grid-cols-2 gap-3 sm:grid-cols-3; }
   .category-tile { @apply flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border p-4 text-center text-sm font-semibold transition hover:-translate-y-0.5 hover:shadow-md; background: linear-gradient(145deg, color-mix(in srgb, var(--surface-strong) 92%, var(--accent-soft)), var(--surface-strong)); border-color: var(--line); color: #074936; }
   .trust-banner { @apply relative flex min-h-32 overflow-hidden rounded-[1.35rem] border p-5 shadow-sm; background: linear-gradient(135deg, #073f2e, #0e6a4b); border-color: color-mix(in srgb, #0e6a4b 70%, white); color: white; }
   .trust-banner h2 { @apply text-lg font-semibold tracking-tight; }

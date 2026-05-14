@@ -22,13 +22,13 @@ export const mockTutors: Tutor[] = [
   {
     id: "mamadou-bah",
     name: "Mamadou Bah",
-    school_affiliation: "Professeur indépendant",
+    school_affiliation: "Aide familiale vérifiée",
     photo_url: "/avatars/mamadou.svg",
-    subjects: ["Photography", "Web design"],
+    subjects: ["Housekeeping"],
     hourly_rate_gnf: 100000,
     neighborhoods: ["Nongo", "Taouyah"],
     languages: ["Français", "Anglais", "Soussou"],
-    bio: "Créatif local disponible pour photographie simple, portraits et petits besoins web. Il privilégie une communication claire, un prix transparent et une livraison rapide.",
+    bio: "Prestataire fiable pour le ménage familial, les petites courses et l’aide à domicile. Il privilégie la ponctualité, la communication claire et un prix transparent.",
     whatsapp: "224600000002",
     is_active: true,
     status: "active",
@@ -42,11 +42,11 @@ export const mockTutors: Tutor[] = [
     name: "Fatoumata Camara",
     school_affiliation: "Institut Supérieur des Sciences de l'Éducation",
     photo_url: "/avatars/fatoumata.svg",
-    subjects: ["Housekeeping", "Website creation"],
+    subjects: ["Babysitting"],
     hourly_rate_gnf: 150000,
     neighborhoods: ["Dixinn", "Ratoma"],
     languages: ["Français", "Maninka"],
-    bio: "Prestataire polyvalente pour housekeeping et création de sites simples. Les clients reçoivent un point clair avant et après chaque service.",
+    bio: "Baby-sitter vérifiée pour les familles qui veulent une aide patiente, fiable et rassurante à domicile. Elle partage un point clair avant et après chaque service.",
     whatsapp: "224600000003",
     is_active: true,
     status: "active",
@@ -69,6 +69,6 @@ export const mockComplaints: Complaint[] = [
 ];
 
 export const mockApplications: TutorApplication[] = [
-  { id: "app1", name: "Ibrahima Sow", phone: "+224 622 000 010", subjects: ["Tutoring", "Web design"], status: "verifying", note: "Verify affiliation + photo before publishing." },
-  { id: "app2", name: "Mariame Barry", phone: "+224 623 000 022", subjects: ["Photography", "Web design"], status: "new", note: "New application to call." },
+  { id: "app1", name: "Ibrahima Sow", phone: "+224 622 000 010", subjects: ["Tutoring"], status: "verifying", note: "Verify affiliation + photo before publishing." },
+  { id: "app2", name: "Mariame Barry", phone: "+224 623 000 022", subjects: ["Babysitting", "Housekeeping"], status: "new", note: "New application to call." },
 ];

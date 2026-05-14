@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { copy, getLocale, type Locale } from "@/lib/i18n";
 
 export function ThemeBootScript() {
-  const code = `(function(){try{var s=localStorage.getItem('konekte-theme')||'system';var d=s==='dark'||(s==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('theme-dark',d);document.documentElement.classList.toggle('theme-light',!d);document.documentElement.dataset.theme=s;}catch(e){}})();`;
+  const code = `(function(){try{var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('theme-dark',d);document.documentElement.classList.toggle('theme-light',!d);document.documentElement.dataset.theme='system';}catch(e){}})();`;
   return <script dangerouslySetInnerHTML={{ __html: code }} />;
 }
 
@@ -16,13 +16,7 @@ export function AppControls() {
   const locale = getLocale(searchParams.get("lang") ?? undefined);
   const t = copy[locale];
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
   const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem("konekte-theme");
-    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system") setTheme(savedTheme);
-  }, []);
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
@@ -40,28 +34,8 @@ export function AppControls() {
     router.push(`${pathname}${query ? `?${query}` : ""}`);
   }
 
-  function changeTheme() {
-    const nextTheme = theme === "system" ? "light" : theme === "light" ? "dark" : "system";
-    const isDark = nextTheme === "dark" || (nextTheme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-    setTheme(nextTheme);
-    window.localStorage.setItem("konekte-theme", nextTheme);
-    document.documentElement.classList.toggle("theme-dark", isDark);
-    document.documentElement.classList.toggle("theme-light", !isDark);
-    document.documentElement.dataset.theme = nextTheme;
-  }
-
   return (
     <div className="flex items-center gap-2">
-      <button
-        type="button"
-        aria-label={theme === "dark" ? "Use system theme" : theme === "light" ? "Use dark theme" : "Use light theme"}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border text-xs font-semibold transition hover:-translate-y-0.5 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-800/20"
-        style={{ background: "var(--surface-strong)", borderColor: "var(--line)", color: "var(--foreground)" }}
-        onClick={changeTheme}
-      >
-        {theme === "dark" ? "☾" : theme === "light" ? "☀" : "◐"}
-      </button>
       <div className="relative" ref={menuRef}>
         <button
           type="button"

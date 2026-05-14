@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Icon } from "@/components/Icon";
 import { TutorCard } from "@/components/TutorCard";
+import { brand } from "@/lib/brand";
 import { copy, getLocale, withLocale } from "@/lib/i18n";
 import { getTutors } from "@/lib/supabase";
 
@@ -11,10 +12,8 @@ export default async function Home({ searchParams }: { searchParams: { lang?: st
   const tutors = (await getTutors()).slice(0, 2);
   const categories = [
     { label: locale === "fr" ? "Tutorat" : "Tutoring", icon: "cap" as const, href: "/tuteurs?subject=Tutoring" },
-    { label: locale === "fr" ? "Photographie" : "Photography", icon: "camera" as const, href: "/tuteurs?subject=Photography" },
     { label: locale === "fr" ? "Ménage" : "Housekeeping", icon: "clean" as const, href: "/tuteurs?subject=Housekeeping" },
-    { label: "Web Design", icon: "screen" as const, href: "/tuteurs?subject=Web%20design" },
-    { label: locale === "fr" ? "Création de sites" : "Website Creation", icon: "globe" as const, href: "/tuteurs?subject=Website%20creation" },
+    { label: locale === "fr" ? "Baby-sitting" : "Babysitting", icon: "heart" as const, href: "/tuteurs?subject=Babysitting" },
   ];
 
   return (
@@ -25,7 +24,7 @@ export default async function Home({ searchParams }: { searchParams: { lang?: st
           <div className="mx-auto max-w-md text-center sm:max-w-3xl">
             <p className="mx-auto mb-4 inline-flex items-center gap-2 text-sm font-medium text-stone-700">
               <Icon name="shield" className="h-4 w-4 text-emerald-700" />
-              {locale === "fr" ? "Vérifié. Local. Fiable." : "Verified. Local. Trusted."}
+              {brand.tagline}
             </p>
             <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-stone-950 sm:text-6xl">{t.heroTitle}</h1>
             <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-stone-600 sm:text-lg">{t.heroBody}</p>

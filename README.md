@@ -1,19 +1,19 @@
-# Konekte
+# Konnecte
 
-Konekte is a mobile-first verified local services marketplace for Guinea/Conakry.
+Konnecte is a mobile-first verified family-help marketplace for Guinea/Conakry.
 
-It is not just a tutoring site. The product direction is a clean local Fiverr/Upwork-style marketplace for trusted providers, starting with:
+The v1 product direction is a clean local marketplace for trusted family support, starting with:
 
 - Tutoring
-- Photography
 - Housekeeping
-- Web design
-- Website creation
+- Babysitting
+
+Photography, web design, website creation, and other local services can come later after the family-help wedge is working.
 
 ## Product principles
 
 - Public UI should feel clean, simple, premium, trustworthy, and mobile-first.
-- Keep the brand as `Konekte` with no accent.
+- Keep the brand as `Konnecte` with no accent.
 - Do not expose admin/internal dashboards from public navigation or homepage cards.
 - Avoid prototype/internal words on public pages: `preview`, `Supabase`, `admin queue`, `View admin`, etc.
 - Use customer-friendly language like `request a match`, `customer request`, and `get matched` instead of heavy account registration language.

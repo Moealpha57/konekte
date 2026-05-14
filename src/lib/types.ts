@@ -50,19 +50,22 @@ export type TutorApplication = {
   note: string;
 };
 
-export const SUBJECTS = ["Tutoring", "Photography", "Housekeeping", "Web design", "Website creation"];
+export const SUBJECTS = ["Tutoring", "Housekeeping", "Babysitting"];
+export const FUTURE_SUBJECTS = ["Photography", "Web design", "Website creation"];
 export const SERVICE_LABELS = {
   fr: {
     Tutoring: "Tutorat",
-    Photography: "Photographie",
     Housekeeping: "Ménage",
+    Babysitting: "Baby-sitting",
+    Photography: "Photographie",
     "Web design": "Web design",
     "Website creation": "Création de sites",
   },
   en: {
     Tutoring: "Tutoring",
-    Photography: "Photography",
     Housekeeping: "Housekeeping",
+    Babysitting: "Babysitting",
+    Photography: "Photography",
     "Web design": "Web design",
     "Website creation": "Website creation",
   },

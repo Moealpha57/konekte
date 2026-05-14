@@ -11,15 +11,15 @@ const tutorMeta: Record<string, Partial<Record<Locale, Partial<Tutor>>>> = {
   },
   "mamadou-bah": {
     en: {
-      school_affiliation: "Independent provider",
-      bio: "Local creative available for simple photography, portraits, and small web needs. He focuses on clear communication, transparent pricing, and quick delivery.",
+      school_affiliation: "Verified family helper",
+      bio: "Reliable provider for family housekeeping, small errands, and home help. He focuses on punctuality, clear communication, and transparent pricing.",
       response_badge: "Top rated",
     },
   },
   "fatoumata-camara": {
     en: {
-      school_affiliation: "Verified local provider",
-      bio: "Versatile provider for housekeeping and simple website creation. Customers receive a clear check-in before and after each service.",
+      school_affiliation: "Verified babysitter",
+      bio: "Verified babysitter for families who want patient, reliable, and reassuring help at home. Customers receive a clear check-in before and after each service.",
       response_badge: "Verified",
     },
   },
