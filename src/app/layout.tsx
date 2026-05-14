@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Suspense } from "react";
 import { ThemeBootScript } from "@/components/AppControls";
 import { MobileTabBar } from "@/components/MobileTabBar";
+import { brand } from "@/lib/brand";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -12,8 +13,8 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Konekte — Services de confiance à Conakry",
-  description: "Konekte aide les clients à trouver des prestataires locaux vérifiés à Conakry.",
+  title: `${brand.name} — Trusted family help in Guinea`,
+  description: brand.positioning,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

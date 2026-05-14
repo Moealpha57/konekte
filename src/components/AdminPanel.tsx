@@ -94,7 +94,7 @@ export function AdminPanel({ locale = "fr" }: { locale?: Locale }) {
           <div className="flex items-start justify-between gap-3">
             <div>
               <h2 className="text-xl font-semibold tracking-tight">Candidatures à vérifier</h2>
-              <p className="mt-2 text-sm text-stone-600">Phase actuelle: Mariama/Konekte vérifie puis ajoute manuellement le profil public.</p>
+              <p className="mt-2 text-sm text-stone-600">Phase actuelle: Mariama/Konnecte vérifie puis ajoute manuellement le profil public.</p>
             </div>
             <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-900">{mockApplications.length} en file</span>
           </div>
